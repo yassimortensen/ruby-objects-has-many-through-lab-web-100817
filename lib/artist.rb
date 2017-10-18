@@ -1,7 +1,6 @@
-
-
+require 'pry'
 class Artist
-  attr_reader :name, :songs
+  attr_accessor :name, :songs
 
   def initialize(name)
     @name = name
@@ -14,7 +13,7 @@ class Artist
   end
 
   def genres
-    songs.collect do |song|
+    self.songs.map do |song|
       song.genre
     end
   end
